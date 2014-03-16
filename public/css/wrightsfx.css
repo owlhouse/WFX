@@ -19,9 +19,15 @@
     font-family: fabrica;
     src: url(Fabrica.otf);
 }
+body { -webkit-animation: bugfix infinite 1s; background: #58524C; }
+
+                    /*LANDING PAGE*/
+h1, h2, h3, h4, h5, p, a {
+    font-family: wire-one;
+    font-weight: 800;
+}
 #landing_wrapper h1{
-    font-family: leaguegothic-regular;
-    font-size: 1000%;
+    font-size: 600%;
     color: #dddddd;
     margin-left: 10%;
     width: 40%;
@@ -33,7 +39,7 @@
     height:100%;
 }
 #landing_wrapper h3 {
-    font-family: leaguegothic-regular;
+    font-family: ;
     color: #dddddd;
     font-size: 500%;
     width:65%;
@@ -51,7 +57,7 @@
 }
 #footer_nav {
     position:fixed;
-    bottom:0;
+    bottom:25px;
     height: 60px;
     width:100%;
     z-index:100;
@@ -60,10 +66,10 @@
     text-align:center;
     height:65px;
     padding-top: 10px;
+    margin-left: 15px;
 }
 #footer_nav li {
     display:inline;
-    float: left;
     padding: 30px;
 }
 #footer_nav ul li a {
@@ -71,7 +77,6 @@
     padding: 20px;
     color: #333333;
     font-size: 2.5em;
-    font-family: leaguegothic-regular;
     -webkit-transition: color 1s ease;
 }
 #footer_nav ul li a:hover {
@@ -85,11 +90,13 @@
     background-color:#423D39;
 }
 
+                    /*  STOREFRONT  */
 #header_wrapper {
     background: url(../images/wrightsfx_landing_bg.jpg) no-repeat fixed;
     background-size: cover;
     height: 700px;
     width: 100%;
+    border-bottom: 1px solid #fff;
 }
 #header_wrapper h1{
     font-family: leaguegothic-regular;
@@ -115,6 +122,7 @@
     text-align:center;
     height:65px;
     padding-top: 10px;
+    margin-left: 15px;
 }
 #store-nav li {
     display: inline;
@@ -156,17 +164,68 @@
 #mask-enlarge-reveal {
     background: black no-repeat fixed;
     height: 700px;
+    border-bottom: 1px solid white;
+}
+#mask-enlarge-reveal img {
+    height: 600px;
+    position:absolute;
+    top: 750px;
+    left: 200px;
+    opacity: 1.0;
+}
+#mask-enlarge-reveal .mask-info {
+    position: relative;
+    height: 100px;
+    top: 15%;
+    right: 50%;
+    font-size: 3em;
+    color: #888888;
+}
+#mask-enlarge-reveal .mask-view {
+    opacity: 0;
+}
+#mask-enlarge-reveal .mask-info-name {
+    text-align: center;
+    position: relative;
+    height: 100px;
+    top: 150%;
+    color: #fff;
+}
+#mask-enlarge-reveal .mask-info-price {
+    position: relative;
+    top: 200%;
+    font-size: .75em;
+}
+#mask-enlarge-reveal .mask-info-buy-now {
+    -webkit-transition: color 1s ease;
+    color: #888888;
+    opacity: 1;
+    position: absolute;
+    top: 300%;
+    left: 70%;
+    width: 250px;
+    font-size: .75em;
+}
+#mask-enlarge-reveal .mask-info-price:hover {
+    color: #990000;
+}
+#mask-enlarge-reveal .mask-info-buy-now:hover {
+    color: #990000;
 }
 #content-wrapper {
     background: #58524C no-repeat fixed;
-    height: 1000px;
-    border-top: 2px solid white;
+    height: 1200px;
+    width: 80%;
+    margin: 0 auto;
 }
 .mask-wrapper {
     display: inline;
-    float: left;
-    width: 33%;
+    float: right;
+    width: 32%;
     padding-top: 50px;
+    margin-top: 20px;
+    margin: 20px 5px 0 0
+    z-index: 10;
 }
 .mask-wrapper img {
     height: 250px;
@@ -176,52 +235,60 @@
     opacity: 0.5;
     -webkit-transition: opacity 1s ease;
 }
-.mask-wrapper:hover img{
-    opacity: 1.0;
+#content-wrapper .mask-wrapper:hover img{
+    opacity: 0.8;
 }
-.mask-wrapper h5 {
-    font-family: fabrica;
-}
-.mask-view {
-    margin-top: 25px;
-    margin: 0 auto;
-    text-align: center;
-    padding: 10px 0;
-    color: #990000;
-    -webkit-transform-style: preserve-3d;
-    -webkit-transform: rotatey(89deg);
-    opacity:0;
-    -webkit-transition: all 1s ease;
-}
-.mask-wrapper:hover .mask-view {
-    opacity: 1.0;
-    margin-top: 50px;
-    -webkit-transform: rotatey(0deg);
-
-}
-.mask-wrapper:hover .mask-info {
+#content-wrapper .mask-wrapper:hover .mask-info{
     opacity: 0;
 }
-.mask-info {
+#content-wrapper .mask-wrapper:hover .mask-view a{
+    opacity: 1;
+}
+#content-wrapper .mask-info:hover {
+    opacity: 0;
+}
+#content-wrapper .mask-wrapper h5 {
+    font-family: leaguegothic-regular;
+}
+#content-wrapper .mask-info {
     height: 50px;
-    width: 40%;
+    width: 60%;
+    opacity:1;
+    font-size: 1.5em;
     text-align: center;
     margin: 0 auto;
     padding-top: 10px;
     -webkit-transition: opacity 1s ease;
+    color: #222222;
 }
-.mask-info-name {
+#content-wrapper .mask-view a{
+    position:absolute;
+    text-decoration:none;
+    font-family: leaguegothic-regular;
+    padding-left: 10%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.5em;
+    padding-top: 8px; 
+    color: #990000;
+    opacity: 0.0;
+    z-index: 5;
+    -webkit-transition: opacity 1s ease;
+}
+#content-wrapper .mask-info-name {
+    opacity: 1.0;
     text-align: center;
     float: left;
     height: 20px;
+    -webkit-transition: opacity 1s ease;
 }
-.mask-info-price {
+#content-wrapper .mask-info-name-buy-now {
+    opacity: 0;
+}
+#content-wrapper .mask-info-price {
+    opacity: 1;
     float: right;
 }
-
-
-
-
 
 #content-bottom {
     border-top: 2px solid white;
@@ -231,7 +298,7 @@
 }
 
 
-/*ABOUT CONTENT*/
+                /*ABOUT CONTENT*/
 
 #about-wrapper {
     position: absolute;
@@ -341,10 +408,10 @@
     -webkit-transition: top 2s ease;
 }
 #about-third #text3-wrapper {
-    width: 600px;
+    width: 500px;
     height: 600px;
     float: left;
-    margin-left: 10%;
+    margin-left:10%;
 }
 #about-third #text3-wrapper .text-3 {
     height: 200px;
@@ -370,14 +437,11 @@
 }
 #about-third #mask3-wrapper {
     margin-top:100px;
-    opacity: 0;
+    opacity: 1;
     height: 700px;
     float: right;
-    margin-right: 10%;
+    margin-right: 20%;
     -webkit-transition: opacity 1s ease;
-}
-#about-third:hover #mask3-wrapper{
-    opacity: 1.0;
 }
 #about-third #mask3-wrapper img {
     height: 700px;
@@ -394,7 +458,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background: url(../images/about_4_bg.jpg) fixed;
+    background: url(../images/brian_at_work.jpg) fixed;
     background-size: cover;
     z-index: 10;
     -webkit-transition: top 2s ease;
