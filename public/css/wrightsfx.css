@@ -23,8 +23,8 @@ body { -webkit-animation: bugfix infinite 1s; background: #58524C; }
 
                     /*LANDING PAGE*/
 h1, h2, h3, h4, h5, p, a {
-    font-family: wire-one;
-    font-weight: 800;
+    font-family: ad;
+    font-weight: 00;
 }
 #landing_wrapper h1{
     font-size: 600%;
@@ -516,21 +516,6 @@ h1, h2, h3, h4, h5, p, a {
     opacity: 1.0;
     padding-left: 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 .next-button {
